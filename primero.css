@@ -1,0 +1,43 @@
+body {
+  font-size: 16px;
+}
+
+.button, .error-button, .success-button {
+  background-color: #3498db;
+  color: #f29f97;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.segundo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.button, .error-button, .success-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.success-button {
+  background-color: green;
+}
+
+.error-button {
+  background-color: red;
+}
+
+.column {
+  float: left;
+  width: 480px;
+  margin-right: 20px;
+}
+
+.last-column {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=primero.css.map */

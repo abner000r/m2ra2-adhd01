@@ -1,0 +1,98 @@
+// styles.scss
+
+$primary-color: #3498db;
+$secondary-color: #e74c3c;
+$base-font-size: 16px;
+
+body {
+  font-size: $base-font-size;
+}
+
+.button {
+  background-color: $primary-color;
+  color: lighten($secondary-color, 20%);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.segundo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@mixin button-styles {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.button {
+  @include button-styles;
+}
+
+.success-button {
+  @extend .button;
+  background-color: green;
+}
+
+.error-button {
+  @extend .button;
+  background-color: red;
+}
+@function calculate-width($columns, $total-columns: 12, $tercero-width: 960px) {
+  @return ($columns / $total-columns) * $tercero-width;
+}
+
+.column {
+  float: left;
+  width: calculate-width(6);
+  margin-right: 40px;
+}
+
+.last-column {
+  margin-right: 0;
+}
+
+
+@mixin text-color($bg-color) {
+  @if (lightness($bg-color) > 50%) {
+    color: #000;
+  } @else {
+    color: #fff;
+  }
+}
+
+.cuarto {
+  background-color: #3498db;
+  @include text-color(#3498db);
+}
+
+.alert {
+  background-color: #e74c3c;
+  @include text-color(#e74c3c);
+}
+
+
+
+@for $i from 1 through 5 {
+  .item-#{$i} {
+    width: 20px * $i;
+  }
+}
+
+$colors: red, green, blue;
+
+@each $color in $colors {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+
+$i: 6;
+@while $i > 0 {
+  .while-#{$i} {
+    width: 20px * $i;
+  }
+  $i: $i - 2;
+}
